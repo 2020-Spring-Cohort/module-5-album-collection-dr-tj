@@ -14,4 +14,5 @@ namespace album_collection.Models
 
         //List of Albums
     }
+    
 }
