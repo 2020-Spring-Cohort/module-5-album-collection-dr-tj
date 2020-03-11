@@ -5,5 +5,9 @@
     <RootNamespace>album_collection</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
 
 </Project>
