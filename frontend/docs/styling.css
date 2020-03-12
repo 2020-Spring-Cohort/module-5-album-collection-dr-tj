@@ -35,12 +35,33 @@ grid-area: header;
 
 .sidebar-div {
 grid-area: menu;
+background-color: black;
+
+}
+
+.sidebar-div > ul {
+    height: 100%;
+}
+
+ul > li {
+    height: 33%;
 
 }
 
 li > .navlink {
-padding: 20px;
+display: flex;
+flex-direction: column;
 text-decoration: none;
+
+}
+
+.button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 200px;
+height: 210px;
+padding: 10px;
 
 }
 
