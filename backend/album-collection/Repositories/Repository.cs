@@ -21,12 +21,14 @@ namespace album_collection.Repositories
 
         public void Create(T entity) 
         { 
-            db.Set<T>().Add(entity); db.SaveChanges(); 
+            db.Set<T>().Add(entity); 
+            db.SaveChanges(); 
         }
 
         public void Update(T entity) 
         { 
-            db.Set<T>().Update(entity); db.SaveChanges(); 
+            db.Set<T>().Update(entity); 
+            db.SaveChanges(); 
         }
 
         public T GetById(int id) 
@@ -36,7 +38,8 @@ namespace album_collection.Repositories
 
         public void Delete(T entity) 
         { 
-            db.Set<T>().Remove(entity); db.SaveChanges(); 
+            db.Set<T>().Remove(entity); 
+            db.SaveChanges(); 
         }       
         
         public void Save()
