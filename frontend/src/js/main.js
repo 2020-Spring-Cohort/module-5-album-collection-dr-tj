@@ -1,14 +1,16 @@
 //import things
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Artists from "./components/Artists";
+import apiActions from "./api/apiActions";
 
 
-pageBuild();
+export default pageBuild();
 
 function pageBuild(){
     header();
     footer();
-
+    navArtists();
 }
 
 function header() {
@@ -19,4 +21,18 @@ function header() {
 function footer(){
     const footer = document.querySelector("#footer");
     footer.innerHTML = Footer();
+}
+
+function navArtists(){
+    const artistsNavButton = document.querySelector(".nav_artists");
+    const app = document.querySelector("#app");
+    
+    artistsNavButton.addEventListener("click", function(){
+        apiActions.getRequest("https://localhost:44313/api/Artist",
+        artists => {
+            console.log(artists);
+            app.innerHTML = Artists(artists);
+        }
+        )
+    });
 }
