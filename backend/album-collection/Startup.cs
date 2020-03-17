@@ -31,7 +31,7 @@ namespace album_collection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            services.AddMvc();
             services.AddDbContext<MusicApiContext>();
             services.AddScoped<IRepository<Album>, AlbumRepository>();
             services.AddScoped<IRepository<Artist>, ArtistRepository>();
