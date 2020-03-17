@@ -13,6 +13,13 @@ namespace album_collection.Controllers
     [ApiController]
     public class ArtistController : ControllerBase
     {
+        List<string> all = new List<string>()
+        {
+            "String 1",
+            "String 2",
+            "String 3"
+        };
+
         IRepository<Artist> artistRepo;
 
         public ArtistController(IRepository<Artist> artistRepo)
@@ -24,11 +31,11 @@ namespace album_collection.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return all;
         }
 
         // GET: api/Artist/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
