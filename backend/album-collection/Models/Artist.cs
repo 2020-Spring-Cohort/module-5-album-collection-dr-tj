@@ -12,9 +12,6 @@ namespace album_collection.Models
         public string Image { get; set; }
         public string Genre { get; set; }
         public virtual ICollection<Album> Albums { get; set; }
-        public virtual Album Album { get; set; }
-        public virtual Song Song { get; set; }
-
 
         public Artist(int id, string name, string image, string genre)
         {
