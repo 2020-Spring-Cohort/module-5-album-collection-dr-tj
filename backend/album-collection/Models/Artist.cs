@@ -11,6 +11,10 @@ namespace album_collection.Models
         public string Name { get; set; }
         public string Image { get; set; }
         public string Genre { get; set; }
+        public virtual ICollection<Album> Albums { get; set; }
+        public virtual Album Album { get; set; }
+        public virtual Song Song { get; set; }
+
 
         public Artist(int id, string name, string image, string genre)
         {
@@ -19,14 +23,8 @@ namespace album_collection.Models
             Image = image;
             Genre = genre;
         }
-
         public Artist()
         {
-
         }
-
-        //List of Albums
-    }
-
-    
+    }   
 }

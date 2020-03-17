@@ -11,6 +11,10 @@ namespace album_collection.Models
         public string Title { get; set; }
         public string RecordLabel { get; set; }
         public string Image { get; set; }
+        public virtual ICollection<Song> Songs { get; set; }
+        public virtual Song Song { get; set; }
+        public virtual Artist Artist { get; set; }
+        public int ArtistId { get; set; }
 
         public Album(int id, string title, string recordLabel, string image)
         {
@@ -24,8 +28,5 @@ namespace album_collection.Models
         {
 
         }
-
-        //Artist Obj
-        //Song List
     }
 }
