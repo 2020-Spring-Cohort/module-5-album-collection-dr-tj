@@ -12,6 +12,19 @@ namespace album_collection.Models
         public string RecordLabel { get; set; }
         public string Image { get; set; }
 
+        public Album(int id, string title, string recordLabel, string image)
+        {
+            Id = id;
+            Title = title;
+            RecordLabel = recordLabel;
+            Image = image;
+        }
+
+        public Album()
+        {
+
+        }
+
         //Artist Obj
         //Song List
     }

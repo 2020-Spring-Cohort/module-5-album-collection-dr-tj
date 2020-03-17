@@ -9,10 +9,24 @@ namespace album_collection.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Img { get; set; }
+        public string Image { get; set; }
         public string Genre { get; set; }
+
+        public Artist(int id, string name, string image, string genre)
+        {
+            Id = id;
+            Name = name;
+            Image = image;
+            Genre = genre;
+        }
+
+        public Artist()
+        {
+
+        }
 
         //List of Albums
     }
+
     
 }
