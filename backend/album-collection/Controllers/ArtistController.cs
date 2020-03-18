@@ -22,34 +22,41 @@ namespace album_collection.Controllers
 
         // GET: api/Artist
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Artist> Get()
         {
-            return new string[] { "value1", "value2" };
+            return artistRepo.GetAll();
         }
 
         // GET: api/Artist/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}")]
+        public Artist Get(int id)
         {
-            return "value";
+            return artistRepo.GetById(id);
         }
 
         // POST: api/Artist
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Artist> Post([FromBody] Artist value)
         {
+            artistRepo.Create(value);
+            return artistRepo.GetAll();
         }
 
         // PUT: api/Artist/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<Artist> Put(int id, [FromBody] Artist value)
         {
+            artistRepo.Update(value);
+            return artistRepo.GetAll();
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<Artist> Delete(int id)
         {
+            var artist = artistRepo.GetById(id);
+            artistRepo.Delete(artist);
+            return artistRepo.GetAll();
         }
     }
 }

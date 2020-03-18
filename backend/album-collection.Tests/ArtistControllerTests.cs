@@ -34,5 +34,21 @@ namespace album_collection.Tests
             Assert.Equal(2, countOfArtist);
 
         }
+
+        [Fact]
+        public void Get_By_Id_Returns_Chosen_Artist()
+        {
+            var id = 2;
+            var firstArtist = new Artist(1, "string1", "string2", "string3");
+            var secondArtist = new Artist(2, "string4", "string5", "string6");
+            var expectedArtist = new List<Artist>();
+            expectedArtist.Add(firstArtist);
+            expectedArtist.Add(secondArtist);
+            
+            artistRepo.GetById(id).Returns(secondArtist);
+            var result = underTest.Get(id);
+
+            Assert.Equal(secondArtist, result);
+        }
     }
 }
