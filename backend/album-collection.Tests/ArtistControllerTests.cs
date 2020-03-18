@@ -50,5 +50,20 @@ namespace album_collection.Tests
 
             Assert.Equal(secondArtist, result);
         }
+
+        [Fact]
+        public void Post_Creates_New_Artist()
+        {
+            var newArtist = new Artist(1, "string1", "string2", "string3");
+            var artistList = new List<Artist>();
+            artistRepo.When(a => a.Create(newArtist))
+                .Do(a => artistList.Add(newArtist));
+
+            artistRepo.GetAll().Returns(artistList);
+
+            var result = underTest.Post(newArtist);
+
+            Assert.Contains(newArtist, result);
+        }
     }
 }
