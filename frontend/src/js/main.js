@@ -1,21 +1,28 @@
 //import things
+import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Artists from "./components/Artists";
 import apiActions from "./api/apiActions";
 
 
-export default pageBuild();
+export default pageBuild;
 
 function pageBuild(){
-    header();
+    sidebar();
     footer();
+    header();
     navArtists();
 }
 
 function header() {
     const header = document.querySelector("#header");
     header.innerHTML = Header();
+}
+
+function sidebar() {
+    const sidebar = document.querySelector(".sidebar-div");
+    sidebar.innerHTML = Sidebar();
 }
 
 function footer(){
@@ -25,13 +32,13 @@ function footer(){
 
 function navArtists(){
     const artistsNavButton = document.querySelector(".nav_artists");
-    const app = document.querySelector("#app");
+    const mainDiv = document.querySelector(".main-div");
     
     artistsNavButton.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44313/api/Artist",
         artists => {
             console.log(artists);
-            app.innerHTML = Artists(artists);
+            mainDiv.innerHTML = Artists(artists);
         }
         )
     });
