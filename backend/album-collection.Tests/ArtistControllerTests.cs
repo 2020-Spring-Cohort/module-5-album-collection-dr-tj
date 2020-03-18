@@ -85,5 +85,26 @@ namespace album_collection.Tests
 
             Assert.All(result, item => Assert.Contains("string1", item.Name));
         }
+
+        [Fact]
+        public void Put_Updates_Artist()
+        {
+            var originalArtist = new Artist(1, "string1", "string2", "genre");
+            var expectedArtists = new List<Artist>()
+            {
+                originalArtist
+            };
+            var updatedArtist = new Artist(1, "string1", "string2", "updatedgenre");
+
+            artistRepo.When(a => artistRepo.Update(updatedArtist))
+                .Do(Callback.First(a => expectedArtists.Remove(originalArtist))
+                .Then(a => expectedArtists.Add(updatedArtist)));
+
+            artistRepo.GetAll().Returns(expectedArtists);
+
+            var result = underTest.Put(updatedArtist);
+
+            Assert.All(result, item => Assert.Contains("updatedgenre", item.Genre));
+        }
     }
 }
