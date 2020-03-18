@@ -44,7 +44,7 @@ namespace album_collection.Tests
             var expectedArtist = new List<Artist>();
             expectedArtist.Add(firstArtist);
             expectedArtist.Add(secondArtist);
-            
+
             artistRepo.GetById(id).Returns(secondArtist);
             var result = underTest.Get(id);
 
@@ -64,6 +64,26 @@ namespace album_collection.Tests
             var result = underTest.Post(newArtist);
 
             Assert.Contains(newArtist, result);
+        }
+
+        [Fact]
+        public void Delete_Removes_Artist()
+        {
+            var artistId = 1;
+            var deletedArtist = new Artist(artistId, "string1", "string2", "string3");
+            var artistList = new List<Artist>()
+            {
+                deletedArtist,
+                new Artist(2, "string1", "string2", "string3")
+            };
+            artistRepo.GetById(artistId).Returns(deletedArtist);
+            artistRepo.When(d => d.Delete(deletedArtist))
+                .Do(d => artistList.Remove(deletedArtist));
+            artistRepo.GetAll().Returns(artistList);
+
+            var result = underTest.Delete(artistId);
+
+            Assert.All(result, item => Assert.Contains("string1", item.Name));
         }
     }
 }
