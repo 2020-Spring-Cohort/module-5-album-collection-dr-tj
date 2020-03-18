@@ -13,6 +13,13 @@ namespace album_collection.Controllers
     [ApiController]
     public class ArtistController : ControllerBase
     {
+        List<string> all = new List<string>()
+        {
+            "String 1",
+            "String 2",
+            "String 3"
+        };
+
         IRepository<Artist> artistRepo;
 
         public ArtistController(IRepository<Artist> artistRepo)
