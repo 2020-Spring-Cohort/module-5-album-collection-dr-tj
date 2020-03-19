@@ -3,7 +3,7 @@ export default function Artists(artists) {
         <ul>
             ${artists.map(artist => {
                 return `
-                    <h4>${artist}</h4>
+                    <h4>${artist.name}</h4>
                 `
             }).join("")}
         </ul>
