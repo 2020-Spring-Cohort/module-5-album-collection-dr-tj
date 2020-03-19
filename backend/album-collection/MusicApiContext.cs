@@ -22,5 +22,57 @@ namespace album_collection
         }
 
         //seed data goes here
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Artist>().HasData(
+                new Artist
+                {
+                    Id = 1,
+                    Name = "Rush",
+                    Image = "",
+                    Genre = "Rock"
+                },
+                new Artist
+                {
+                    Id = 2,
+                    Name = "Queen",
+                    Image = "",
+                    Genre = "Rock"
+                },
+                new Artist
+                {
+                    Id = 3,
+                    Name = "Ace of Base",
+                    Image = "",
+                    Genre = "Pop"
+                },
+                new Artist
+                {
+                    Id = 4,
+                    Name = "Reel Big Fish",
+                    Image = "",
+                    Genre = "Ska"
+                }
+                );
+
+            modelBuilder.Entity<Album>().HasData(
+                new Album
+                {
+                    Id = 1,
+                    Title = "Moving Pictures",
+                    RecordLabel = "Anthem",
+                    Image = "",
+                    ArtistId = 1
+                },
+                new Album
+                {
+                    Id = 2,
+                    Title = "A Night at the Opera",
+                    RecordLabel = "EMI Records",
+                    Image = "",
+                    ArtistId = 2
+                }
+                );
+        }
     }
 }
