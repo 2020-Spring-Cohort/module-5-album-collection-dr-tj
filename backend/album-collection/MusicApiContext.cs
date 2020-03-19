@@ -71,6 +71,22 @@ namespace album_collection
                     RecordLabel = "EMI Records",
                     Image = "",
                     ArtistId = 2
+                },
+                new Album
+                {
+                    Id = 3,
+                    Title = "The Sign",
+                    RecordLabel = "Arista",
+                    Image = "",
+                    ArtistId = 3
+                },
+                new Album
+                {
+                    Id = 4,
+                    Title = "Turn the Radio Off",
+                    RecordLabel = "Mojo",
+                    Image = "",
+                    ArtistId = 4
                 }
                 );
         }
