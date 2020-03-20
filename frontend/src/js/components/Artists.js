@@ -4,7 +4,7 @@ export default function Artists(artists) {
             ${artists.map(artist => {
                 return `
                     <div class="artist-item-container">
-                        <h6>${artist.name}</h6>
+                        <h6 class="specific-artist">${artist.name}</h6>
                         <button class="edit-artist__submit">Edit</button>
                         <button class="delete-artist__submit">Delete</button>
                         <input class="artist-id" type="hidden" value="${artist.id}">
