@@ -93,4 +93,10 @@ function navArtists() {
             )
         }
     });
+
+    mainDiv.addEventListener("click", function(){
+        if(event.target.classList.contains("update-artist__submit")){
+            const artistId = event.target.parentElement.querySelector("")
+        }
+    })
 }
