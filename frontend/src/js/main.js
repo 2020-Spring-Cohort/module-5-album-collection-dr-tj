@@ -66,8 +66,8 @@ function navArtists() {
         }
     });
 
-    mainDiv.addEventListener("click", function(){
-        if(event.target.classList.contains("delete-artist__submit")){
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("delete-artist__submit")) {
             const artistId = event.target.parentElement.querySelector(".artist-id").value;
             console.log(artistId);
 
@@ -80,8 +80,8 @@ function navArtists() {
         }
     });
 
-    mainDiv.addEventListener("click", function(){
-        if(event.target.classList.contains("edit-artist__submit")){
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("edit-artist__submit")) {
             const artistId = event.target.parentElement.querySelector(".artist-id").value;
             console.log(artistId);
 
@@ -94,9 +94,25 @@ function navArtists() {
         }
     });
 
-    mainDiv.addEventListener("click", function(){
-        if(event.target.classList.contains("update-artist__submit")){
-            const artistId = event.target.parentElement.querySelector("")
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("update-artist__submit")) {
+            const artistId = event.target.parentElement.querySelector(".update-artist__id").value;
+            const artistName = event.target.parentElement.querySelector(".update-artist__name").value;
+            const artistGenre = event.target.parentElement.querySelector(".update-artist__genre").value;
+
+            const artistData = {
+                Id: artistId,
+                Name: artistName,
+                Genre: artistGenre
+            }
+            console.log(artistData);
+            apiActions.putRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artistData,
+                artists => {
+                    mainDiv.innerHTML = Artists(artists);
+                }
+            )
         }
-    })
+    });
 }
