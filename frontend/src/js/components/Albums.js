@@ -4,7 +4,7 @@ export default function Albums(albums) {
             ${albums.map(album => {
                 return `
                     <div class="album-item-container">
-                        <h6 class="specific-album">${album.title}</h6>
+                        <h6 class="specific-album">${album.title} by ${album.artist.name}</h6>
                         <button class="edit-album__submit">Edit</button>
                         <button class="delete-album__submit">Delete</button>
                         <input class="album-id" type="hidden" value="${album.id}">

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Artists from "./components/Artists";
 import ArtistEdit from "./components/ArtistEdit";
+import Albums from "./components/Albums";
 import apiActions from "./api/apiActions";
 
 
@@ -14,6 +15,7 @@ function pageBuild() {
     footer();
     header();
     navArtists();
+    navAlbums();
 }
 
 function header() {
@@ -114,5 +116,19 @@ function navArtists() {
                 }
             )
         }
+    });
+}
+
+function navAlbums(){
+    const albumsNavButton = document.querySelector(".nav_albums");
+    const mainDiv = document.querySelector(".main-div");
+
+    albumsNavButton.addEventListener("click", function () {
+        apiActions.getRequest("https://localhost:44313/api/Album",
+            albums => {
+                console.log(albums);
+                mainDiv.innerHTML = Albums(albums);
+            }
+        )
     });
 }
