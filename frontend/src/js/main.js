@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Artists from "./components/Artists";
+import ArtistEdit from "./components/ArtistEdit";
 import apiActions from "./api/apiActions";
 
 
@@ -77,5 +78,19 @@ function navArtists() {
                 }
             )
         }
-    })
+    });
+
+    mainDiv.addEventListener("click", function(){
+        if(event.target.classList.contains("edit-artist__submit")){
+            const artistId = event.target.parentElement.querySelector(".artist-id").value;
+            console.log(artistId);
+
+            apiActions.getRequest(
+                `https://localhost:44313/api/Artist/${artistId}`,
+                artistEdit => {
+                    mainDiv.innerHTML = ArtistEdit(artistEdit);
+                }
+            )
+        }
+    });
 }
