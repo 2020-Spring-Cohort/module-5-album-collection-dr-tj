@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Artists from "./components/Artists";
 import ArtistEdit from "./components/ArtistEdit";
 import Albums from "./components/Albums";
+import AlbumPostSection from "./components/AlbumPostSection";
 import apiActions from "./api/apiActions";
 
 
@@ -131,6 +132,18 @@ function navAlbums(){
             }
         )
     });
+
+    mainDiv.addEventListener("click", function(){
+        const addAlbumSection = mainDiv.querySelector(".add-album");
+        if(event.target.classList.contains("add-album__button")){
+            apiActions.getRequest("https://localhost:44313/api/Artist",
+            artists => {
+                console.log(artists);
+                addAlbumSection.innerHTML = AlbumPostSection(artists);
+            }
+        )
+        }
+    })
 
     mainDiv.addEventListener("click", function(){
         if(event.target.classList.contains("add-album__submit")){

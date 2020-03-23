@@ -14,16 +14,9 @@ export default function Albums(albums) {
         </div>
 
     <section class="add-album">
-        <input class="add-album__album-title" type="text" placeholder="Add an album title">
-        <input class="add-album__album-record-label" type="text" placeholder="Add a record label">
-        <select class="add-album__artist-id" type="dropdown">
-        ${albums.map(album => {
-            return `
-                <option value=${album.artist.id}>${album.artist.name}</option>
-                `
-            })}
-            </select>
-        <button class="add-album__submit">Add an album</button>
+        <button class="add-album__button">Click to add album</button>
+
+
     </section>
     `
 }
