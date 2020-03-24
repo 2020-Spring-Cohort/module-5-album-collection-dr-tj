@@ -9,6 +9,7 @@ import AlbumPostSection from "./components/AlbumPostSection";
 import apiActions from "./api/apiActions";
 import AlbumEdit from "./components/AlbumEdit";
 import Songs from "./components/Songs";
+import SongPostSection from "./components/SongPostSection";
 
 
 export default pageBuild;
