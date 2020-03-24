@@ -196,5 +196,13 @@ function navAlbums(){
                 }
             )
         }
+    });
+
+    mainDiv.addEventListener("click", function (){
+        if(event.target.classList.contains("update-album__submit")) {
+            const albumId = event.target.parentElement.querySelector(".update-album__id").value;
+            const albumRecordLabel = event.target.parentElement.querySelector(".update-album__recordLabel").value;
+            const albumTitle = event.target.parentElement.querySelector(".update-album__title").value;
+        }
     })
 }
