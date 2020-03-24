@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace album_collection.Repositories
 {
-    public class AlbumRepository : Repository<Album>
+    public class AlbumRepository : Repository<Album>, IRepository<Album>
     {
         public AlbumRepository(MusicApiContext context) : base(context)
         {

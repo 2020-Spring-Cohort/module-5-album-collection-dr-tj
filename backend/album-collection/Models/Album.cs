@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace album_collection.Models
@@ -12,7 +13,22 @@ namespace album_collection.Models
         public string RecordLabel { get; set; }
         public string Image { get; set; }
 
-        //Artist Obj
-        //Song List
+        [JsonIgnore]
+        public virtual Artist Artist { get; set; }
+        public int ArtistId { get; set; }
+        public virtual ICollection<Song> Songs { get; set; }
+
+        public Album(int id, string title, string recordLabel, string image)
+        {
+            Id = id;
+            Title = title;
+            RecordLabel = recordLabel;
+            Image = image;
+        }
+
+        public Album()
+        {
+
+        }
     }
 }

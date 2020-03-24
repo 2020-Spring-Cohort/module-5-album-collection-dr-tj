@@ -19,37 +19,44 @@ namespace album_collection.Controllers
         {
             this.songRepo = songRepo;
         }
-        
-        // GET: api/Song
+
+        // GET: api/Album
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Song> Get()
         {
-            return new string[] { "value1", "value2" };
+            return songRepo.GetAll();
         }
 
-        // GET: api/Song/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        // GET: api/Album/5
+        [HttpGet("{id}")]
+        public Song Get(int id)
         {
-            return "value";
+            return songRepo.GetById(id);
         }
 
-        // POST: api/Song
+        // POST: api/Album
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Song> Post([FromBody] Song value)
         {
+            songRepo.Create(value);
+            return songRepo.GetAll();
         }
 
-        // PUT: api/Song/5
+        // PUT: api/Album/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<Song> Put([FromBody] Song value)
         {
+            songRepo.Update(value);
+            return songRepo.GetAll();
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<Song> Delete(int id)
         {
+            var album = songRepo.GetById(id);
+            songRepo.Delete(album);
+            return songRepo.GetAll();
         }
     }
 }
