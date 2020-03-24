@@ -7,6 +7,7 @@ import ArtistEdit from "./components/ArtistEdit";
 import Albums from "./components/Albums";
 import AlbumPostSection from "./components/AlbumPostSection";
 import apiActions from "./api/apiActions";
+import AlbumEdit from "./components/AlbumEdit";
 
 
 export default pageBuild;
@@ -182,4 +183,18 @@ function navAlbums(){
             )
         }
     });
+
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("edit-album__submit")) {
+            const albumId = event.target.parentElement.querySelector(".album-id").value;
+            console.log(albumId);
+
+            apiActions.getRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                albumEdit => {
+                    mainDiv.innerHTML = AlbumEdit(albumEdit);
+                }
+            )
+        }
+    })
 }
