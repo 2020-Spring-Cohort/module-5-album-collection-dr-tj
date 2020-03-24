@@ -8,6 +8,7 @@ import Albums from "./components/Albums";
 import AlbumPostSection from "./components/AlbumPostSection";
 import apiActions from "./api/apiActions";
 import AlbumEdit from "./components/AlbumEdit";
+import Songs from "./components/Songs";
 
 
 export default pageBuild;
@@ -18,6 +19,7 @@ function pageBuild() {
     header();
     navArtists();
     navAlbums();
+    navSongs();
 }
 
 function header() {
@@ -121,7 +123,7 @@ function navArtists() {
     });
 }
 
-function navAlbums(){
+function navAlbums() {
     const albumsNavButton = document.querySelector(".nav_albums");
     const mainDiv = document.querySelector(".main-div");
 
@@ -134,20 +136,20 @@ function navAlbums(){
         )
     });
 
-    mainDiv.addEventListener("click", function(){
+    mainDiv.addEventListener("click", function () {
         const addAlbumSection = mainDiv.querySelector(".add-album");
-        if(event.target.classList.contains("add-album__button")){
+        if (event.target.classList.contains("add-album__button")) {
             apiActions.getRequest("https://localhost:44313/api/Artist",
-            artists => {
-                console.log(artists);
-                addAlbumSection.innerHTML = AlbumPostSection(artists);
-            }
-        )
+                artists => {
+                    console.log(artists);
+                    addAlbumSection.innerHTML = AlbumPostSection(artists);
+                }
+            )
         }
     })
 
-    mainDiv.addEventListener("click", function(){
-        if(event.target.classList.contains("add-album__submit")){
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("add-album__submit")) {
             const albumTitle = event.target.parentElement.querySelector(".add-album__album-title").value;
             const albumRecordLabel = event.target.parentElement.querySelector(".add-album__album-record-label").value;
             const albumArtistId = event.target.parentElement.querySelector(".add-album__artist-id").value;
@@ -198,8 +200,8 @@ function navAlbums(){
         }
     });
 
-    mainDiv.addEventListener("click", function (){
-        if(event.target.classList.contains("update-album__submit")) {
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("update-album__submit")) {
             const albumId = event.target.parentElement.querySelector(".update-album__id").value;
             const albumRecordLabel = event.target.parentElement.querySelector(".update-album__recordLabel").value;
             const albumTitle = event.target.parentElement.querySelector(".update-album__title").value;
@@ -223,3 +225,19 @@ function navAlbums(){
         }
     });
 }
+
+function navSongs() {
+    const songsNavButton = document.querySelector(".nav_songs");
+    const mainDiv = document.querySelector(".main-div");
+
+    songsNavButton.addEventListener("click", function () {
+        apiActions.getRequest("https://localhost:44313/api/Song",
+            songs => {
+                console.log(songs);
+                mainDiv.innerHTML = Songs(songs);
+            }
+        )
+    });
+
+
+};
