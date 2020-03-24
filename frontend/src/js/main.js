@@ -10,6 +10,7 @@ import apiActions from "./api/apiActions";
 import AlbumEdit from "./components/AlbumEdit";
 import Songs from "./components/Songs";
 import SongPostSection from "./components/SongPostSection";
+import SongEdit from "./components/SongEdit";
 
 
 export default pageBuild;
@@ -283,6 +284,41 @@ function navSongs() {
                 }
             )
         }
-    })
+    });
+
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("edit-song__submit")) {
+            const songId = event.target.parentElement.querySelector(".song-id").value;
+
+            apiActions.getRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                songEdit => {
+                    mainDiv.innerHTML = SongEdit(songEdit);
+                }
+            )
+        }
+    });
+
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("update-song__submit")) {
+            const songTitle = event.target.parentElement.querySelector(".update-song__title").value;
+            const songDuration = event.target.parentElement.querySelector(".update-song__duration").value;
+            const songId = event.target.parentElement.querySelector(".update-song__id").value;
+            const songAlbumId = event.target.parentElement.querySelector(".update-song__album-id").value;
+            const requestBody = {
+                Title: songTitle,
+                Duration: songDuration,
+                Id: songId,
+                AlbumId: songAlbumId
+            }
+            apiActions.putRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                requestBody,
+                songs => {
+                    mainDiv.innerHTML = Songs(songs);
+                } 
+            )
+        }
+    });
 
 };
