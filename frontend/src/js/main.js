@@ -270,6 +270,19 @@ function navSongs() {
                 }
             )
         }
+    });
+
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("delete-song__submit")) {
+            const songId = event.target.parentElement.querySelector(".song-id").value;
+
+            apiActions.deleteRequest(
+                `https://localhost:44313/api/Song/${songId}`,
+                songs => {
+                    mainDiv.innerHTML = Songs(songs);
+                }
+            )
+        }
     })
 
 };
