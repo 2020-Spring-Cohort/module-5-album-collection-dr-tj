@@ -242,12 +242,32 @@ function navSongs() {
 
     mainDiv.addEventListener("click", function () {
         const addSongSection = mainDiv.querySelector(".add-song");
-        if(event.target.classList.contains("add-song__button"))
-        {
+        if (event.target.classList.contains("add-song__button")) {
             apiActions.getRequest("https://localhost:44313/api/Album",
-            albums => {
-                addSongSection.innerHTML = SongPostSection(albums);
+                albums => {
+                    addSongSection.innerHTML = SongPostSection(albums);
+                }
+            )
+        }
+    });
+
+    mainDiv.addEventListener("click", function () {
+        if (event.target.classList.contains("add-song__submit")) {
+            const songTitle = event.target.parentElement.querySelector(".add-song__song-title").value;
+            const songDuration = event.target.parentElement.querySelector(".add-song__song-duration").value;
+            const songAlbumId = event.target.parentElement.querySelector(".add-song__album-id").value;
+
+            const requestBody = {
+                Title: songTitle,
+                Duration: songDuration,
+                AlbumId: songAlbumId
             }
+            apiActions.postRequest(
+                `https://localhost:44313/api/Song`,
+                requestBody,
+                songs => {
+                    mainDiv.innerHTML = Songs(songs);
+                }
             )
         }
     })
