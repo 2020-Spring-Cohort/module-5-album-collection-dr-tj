@@ -203,6 +203,23 @@ function navAlbums(){
             const albumId = event.target.parentElement.querySelector(".update-album__id").value;
             const albumRecordLabel = event.target.parentElement.querySelector(".update-album__recordLabel").value;
             const albumTitle = event.target.parentElement.querySelector(".update-album__title").value;
+            const albumArtistId = event.target.parentElement.querySelector(".update-album__artist-id").value;
+
+            const requestBody = {
+                Id: albumId,
+                RecordLabel: albumRecordLabel,
+                Title: albumTitle,
+                ArtistId: albumArtistId
+            }
+            console.log(requestBody);
+
+            apiActions.putRequest(
+                `https://localhost:44313/api/Album/${albumId}`,
+                requestBody,
+                albums => {
+                    mainDiv.innerHTML = Albums(albums);
+                }
+            )
         }
-    })
+    });
 }
