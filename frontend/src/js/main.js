@@ -239,5 +239,16 @@ function navSongs() {
         )
     });
 
+    mainDiv.addEventListener("click", function () {
+        const addSongSection = mainDiv.querySelector(".add-song");
+        if(event.target.classList.contains("add-song__button"))
+        {
+            apiActions.getRequest("https://localhost:44313/api/Album",
+            albums => {
+                addSongSection.innerHTML = SongPostSection(albums);
+            }
+            )
+        }
+    })
 
 };
