@@ -99,9 +99,18 @@ grid-area: footer;
   }
 
 .artist-image {
-  max-height: 150px;
+  max-height: 200px;
+  padding: 1em;
+  
 }
 
 .album-image {
-  max-height: 150px;
+  max-height: 200px;
+}
+
+.artist-item-container {
+  border: 3px solid black;
+  margin: 0 18em 0 18em;
+  
+  
 }

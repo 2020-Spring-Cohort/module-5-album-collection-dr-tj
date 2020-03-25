@@ -60,7 +60,8 @@ function navArtists() {
 
             var requestBody = {
                 Name: artistName,
-                Genre: artistGenre
+                Genre: artistGenre,
+                Image: "./img/genericband.jpg"
             }
 
             apiActions.postRequest(
@@ -161,7 +162,8 @@ function navAlbums() {
             var requestBody = {
                 Title: albumTitle,
                 RecordLabel: albumRecordLabel,
-                ArtistId: albumArtistId
+                ArtistId: albumArtistId,
+                Image: "./img/genericalbum.jpg"
             }
             apiActions.postRequest(
                 "https://localhost:44313/api/Album",
