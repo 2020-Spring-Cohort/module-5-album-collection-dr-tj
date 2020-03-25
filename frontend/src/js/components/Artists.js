@@ -5,10 +5,14 @@ export default function Artists(artists) {
                 return `
                     <div class="artist-item-container">
                         <h6 class="specific-artist">${artist.name}</h6>
+                        <div>
+                            <img class="artist-image" src=${artist.image}></img>
+                        </div>    
                         <button class="edit-artist__submit">Edit</button>
                         <button class="delete-artist__submit">Delete</button>
                         <input class="artist-id" type="hidden" value="${artist.id}">
                     </div>
+                    <br>
                 `
             }).join("")}
         </div>

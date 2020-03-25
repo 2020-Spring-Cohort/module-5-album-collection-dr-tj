@@ -68,8 +68,8 @@ padding: 10px;
 
 .main-div {
 grid-area: main;
-
-
+overflow-x: hidden;
+overflow-y: auto;
 }
 
 .main-div > h1 {
@@ -98,6 +98,10 @@ grid-area: footer;
     }
   }
 
+.artist-image {
+  max-height: 150px;
+}
 
-
-
+.album-image {
+  max-height: 150px;
+}

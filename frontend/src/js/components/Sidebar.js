@@ -1,10 +1,10 @@
 export default function Sidebar() {
     return `<nav class="nav_sidebar">
-        <ul>
-            <li class="nav_home">Home</li>
-            <li class="nav_artists">Artists</li>
-            <li class="nav_albums">Albums</li>
-            <li class="nav_songs">Songs</li>
-        </ul>
+        <div>
+            <article class="nav_home">Home</article>
+            <article class="nav_artists">Artists</article>
+            <article class="nav_albums">Albums</article>
+            <article class="nav_songs">Songs</article>
+        </div>
     </nav>`
 }
