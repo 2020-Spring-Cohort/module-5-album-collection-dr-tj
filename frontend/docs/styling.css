@@ -108,19 +108,19 @@ grid-area: footer;
 
 .artist-item-container {
   border: 3px solid black;
-  margin: 0 18em 0 18em;
-  
+  background: #999;
   
 }
 
 .album-item-container {
   border: 3px solid black;
-  margin: 0 18em 0 18em;
+  background: #999;
 
 }
 
 .song-item-container {
   border: 3px solid black;
-  margin: 0 18em 0 18em;
+  background: #999;
+  margin: 1em 0;
 }
 
