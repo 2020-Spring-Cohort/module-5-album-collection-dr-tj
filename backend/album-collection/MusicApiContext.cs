@@ -29,28 +29,28 @@ namespace album_collection
                 {
                     Id = 1,
                     Name = "Rush",
-                    Image = "./docs/img/Rush.jpg",
+                    Image = "./img/Rush.jpg",
                     Genre = "Rock"
                 },
                 new Artist
                 {
                     Id = 2,
                     Name = "Queen",
-                    Image = "./docs/img/Queen.jpg",
+                    Image = "./img/Queen.jpg",
                     Genre = "Rock"
                 },
                 new Artist
                 {
                     Id = 3,
                     Name = "Ace of Base",
-                    Image = "./docs/img/Aceofbase.jpg",
+                    Image = "./img/Aceofbase.jpg",
                     Genre = "Pop"
                 },
                 new Artist
                 {
                     Id = 4,
                     Name = "Reel Big Fish",
-                    Image = "./doc/img/Reelbigfish.jpg",
+                    Image = "./img/Reelbigfish.jpg",
                     Genre = "Ska"
                 }
                 );
@@ -61,7 +61,7 @@ namespace album_collection
                     Id = 1,
                     Title = "Moving Pictures",
                     RecordLabel = "Anthem",
-                    Image = "./doc/img/Movingpictures.jpg",
+                    Image = "./img/Movingpictures.jpg",
                     ArtistId = 1
                 },
                 new Album
@@ -69,7 +69,7 @@ namespace album_collection
                     Id = 2,
                     Title = "A Night at the Opera",
                     RecordLabel = "EMI Records",
-                    Image = "./docs/img/QueenANightAtTheOpera.png",
+                    Image = "./img/QueenANightAtTheOpera.png",
                     ArtistId = 2
                 },
                 new Album
@@ -77,7 +77,7 @@ namespace album_collection
                     Id = 3,
                     Title = "The Sign",
                     RecordLabel = "Arista",
-                    Image = "./docs/img/TheSign.jpg",
+                    Image = "./img/TheSign.jpg",
                     ArtistId = 3
                 },
                 new Album
@@ -85,7 +85,7 @@ namespace album_collection
                     Id = 4,
                     Title = "Turn the Radio Off",
                     RecordLabel = "Mojo",
-                    Image = "./docs/img/Turntheradiooff.jpg",
+                    Image = "./img/Turntheradiooff.jpg",
                     ArtistId = 4
                 }
                 );
