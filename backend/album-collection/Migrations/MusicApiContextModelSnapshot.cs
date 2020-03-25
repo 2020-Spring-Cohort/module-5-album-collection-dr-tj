@@ -48,7 +48,7 @@ namespace album_collection.Migrations
                         {
                             Id = 1,
                             ArtistId = 1,
-                            Image = "./doc/img/Movingpictures.jpg",
+                            Image = "./img/Movingpictures.jpg",
                             RecordLabel = "Anthem",
                             Title = "Moving Pictures"
                         },
@@ -56,7 +56,7 @@ namespace album_collection.Migrations
                         {
                             Id = 2,
                             ArtistId = 2,
-                            Image = "./docs/img/QueenANightAtTheOpera.png",
+                            Image = "./img/QueenANightAtTheOpera.png",
                             RecordLabel = "EMI Records",
                             Title = "A Night at the Opera"
                         },
@@ -64,7 +64,7 @@ namespace album_collection.Migrations
                         {
                             Id = 3,
                             ArtistId = 3,
-                            Image = "./docs/img/TheSign.jpg",
+                            Image = "./img/TheSign.jpg",
                             RecordLabel = "Arista",
                             Title = "The Sign"
                         },
@@ -72,7 +72,7 @@ namespace album_collection.Migrations
                         {
                             Id = 4,
                             ArtistId = 4,
-                            Image = "./docs/img/Turntheradiooff.jpg",
+                            Image = "./img/Turntheradiooff.jpg",
                             RecordLabel = "Mojo",
                             Title = "Turn the Radio Off"
                         });
@@ -103,28 +103,28 @@ namespace album_collection.Migrations
                         {
                             Id = 1,
                             Genre = "Rock",
-                            Image = "./docs/img/Rush.jpg",
+                            Image = "./img/Rush.jpg",
                             Name = "Rush"
                         },
                         new
                         {
                             Id = 2,
                             Genre = "Rock",
-                            Image = "./docs/img/Queen.jpg",
+                            Image = "./img/Queen.jpg",
                             Name = "Queen"
                         },
                         new
                         {
                             Id = 3,
                             Genre = "Pop",
-                            Image = "./docs/img/Aceofbase.jpg",
+                            Image = "./img/Aceofbase.jpg",
                             Name = "Ace of Base"
                         },
                         new
                         {
                             Id = 4,
                             Genre = "Ska",
-                            Image = "./doc/img/Reelbigfish.jpg",
+                            Image = "./img/Reelbigfish.jpg",
                             Name = "Reel Big Fish"
                         });
                 });
