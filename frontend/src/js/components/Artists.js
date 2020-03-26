@@ -4,7 +4,8 @@ export default function Artists(artists) {
             ${artists.map(artist => {
                 return `
                     <div class="artist-item-container">
-                        <h6 class="specific-artist">${artist.name}</h6>
+                        <h4 class="specific-artist">${artist.name}</h4>
+                        <p>Genre: ${artist.genre}<p>
                         <div>
                             <img class="artist-image" src=${artist.image}></img>
                         </div>    

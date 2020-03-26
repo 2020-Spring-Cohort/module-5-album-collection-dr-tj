@@ -4,7 +4,7 @@ export default function Songs(songs) {
             ${songs.map(song => {
                 return `
                     <div class="song-item-container">
-                        <h6 class="specific-song">${song.title} on ${song.album.title}</h6>
+                        <h6 class="specific-song">${song.title} on ${song.album.title}. Duration: ${song.duration}</h6>
                         <button class="edit-song__submit">Edit</button>
                         <button class="delete-song__submit">Delete</button>
                         <input class="song-id" type="hidden" value="${song.id}">

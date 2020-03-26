@@ -122,7 +122,8 @@ function navArtists() {
             const artistData = {
                 Id: artistId,
                 Name: artistName,
-                Genre: artistGenre
+                Genre: artistGenre,
+                Image: "./img/genericband.jpg"
             }
             console.log(artistData);
             apiActions.putRequest(
@@ -225,7 +226,8 @@ function navAlbums() {
                 Id: albumId,
                 RecordLabel: albumRecordLabel,
                 Title: albumTitle,
-                ArtistId: albumArtistId
+                ArtistId: albumArtistId,
+                Image: "./img/genericalbum.jpg"
             }
             console.log(requestBody);
 

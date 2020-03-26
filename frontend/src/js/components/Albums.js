@@ -4,7 +4,8 @@ export default function Albums(albums) {
             ${albums.map(album => {
                 return `
                     <div class="album-item-container">
-                        <h6 class="specific-album">${album.title} by ${album.artist.name}</h6>
+                        <h4 class="specific-album">${album.title} by ${album.artist.name}</h4>
+                        <p>Label: ${album.recordLabel} </p>
                         <div>
                             <img class="album-image" src=${album.image}></img>
                         </div>
