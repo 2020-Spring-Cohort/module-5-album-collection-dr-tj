@@ -2,6 +2,7 @@
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 import Artists from "./components/Artists";
 import ArtistEdit from "./components/ArtistEdit";
 import Albums from "./components/Albums";
@@ -19,6 +20,7 @@ function pageBuild() {
     sidebar();
     footer();
     header();
+    home();
     navArtists();
     navAlbums();
     navSongs();
@@ -37,6 +39,14 @@ function sidebar() {
 function footer() {
     const footer = document.querySelector("#footer");
     footer.innerHTML = Footer();
+}
+
+function home() {
+    const home = document.querySelector(".nav_home");
+    const mainDiv = document.querySelector(".main-div");
+    home.addEventListener("click", function(){
+        mainDiv.innerHTML = Home();
+    });
 }
 
 function navArtists() {
@@ -60,7 +70,8 @@ function navArtists() {
 
             var requestBody = {
                 Name: artistName,
-                Genre: artistGenre
+                Genre: artistGenre,
+                Image: "./img/genericband.jpg"
             }
 
             apiActions.postRequest(
@@ -161,7 +172,8 @@ function navAlbums() {
             var requestBody = {
                 Title: albumTitle,
                 RecordLabel: albumRecordLabel,
-                ArtistId: albumArtistId
+                ArtistId: albumArtistId,
+                Image: "./img/genericalbum.jpg"
             }
             apiActions.postRequest(
                 "https://localhost:44313/api/Album",

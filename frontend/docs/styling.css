@@ -39,21 +39,19 @@ background-color: black;
 
 }
 
-.sidebar-div > ul {
-    height: 100%;
+.nav_container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  height: 100%;
+  justify-content: space-around;
 }
 
-ul > li {
-    height: 33%;
+    article {
+      margin: 1em 0;
+  }
 
-}
 
-li > .navlink {
-display: flex;
-flex-direction: column;
-text-decoration: none;
 
-}
 
 .button {
 display: flex;
@@ -68,8 +66,8 @@ padding: 10px;
 
 .main-div {
 grid-area: main;
-
-
+overflow-x: hidden;
+overflow-y: auto;
 }
 
 .main-div > h1 {
@@ -98,6 +96,31 @@ grid-area: footer;
     }
   }
 
+.artist-image {
+  max-height: 200px;
+  padding: 1em;
+  
+}
 
+.album-image {
+  max-height: 200px;
+}
 
+.artist-item-container {
+  border: 3px solid black;
+  background: #999;
+  
+}
+
+.album-item-container {
+  border: 3px solid black;
+  background: #999;
+
+}
+
+.song-item-container {
+  border: 3px solid black;
+  background: #999;
+  margin: 1em 0;
+}
 
